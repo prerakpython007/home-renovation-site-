@@ -45,26 +45,26 @@ export default function Portfolio() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="group relative overflow-hidden rounded-2xl cursor-pointer"
+              className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-lg cursor-pointer"
             >
-              <div className="relative h-[320px]">
+              <div className="relative h-64 overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute top-4 left-4">
+                  <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-zinc-700 backdrop-blur-sm shadow-sm">
+                    {project.category}
+                  </span>
+                </div>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                <span className="inline-flex rounded-full bg-white/20 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
-                  {project.category}
-                </span>
-                <h3 className="mt-3 text-xl font-bold text-white">
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-zinc-900">
                   {project.title}
                 </h3>
-                <p className="mt-1 text-sm text-white/80">
+                <p className="mt-1 text-sm text-zinc-600">
                   {project.description}
                 </p>
               </div>
