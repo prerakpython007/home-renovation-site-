@@ -30,7 +30,7 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="bg-white py-24">
+    <section id="portfolio" className="bg-gray-50/50 py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-amber-600">
@@ -45,7 +45,7 @@ export default function Portfolio() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-lg cursor-pointer"
+              className="card-hover group overflow-hidden rounded-2xl border border-gray-100 bg-white ring-1 ring-gray-100 cursor-pointer"
             >
               <div className="relative h-64 overflow-hidden">
                 <Image
@@ -55,16 +55,16 @@ export default function Portfolio() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-zinc-700 backdrop-blur-sm shadow-sm">
+                  <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-zinc-700 backdrop-blur-sm shadow-sm ring-1 ring-gray-100">
                     {project.category}
                   </span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-zinc-900">
+                <h3 className="text-lg font-bold text-zinc-900 group-hover:text-amber-600 transition-colors">
                   {project.title}
                 </h3>
-                <p className="mt-1 text-sm text-zinc-600">
+                <p className="mt-1 text-sm text-zinc-500">
                   {project.description}
                 </p>
               </div>
@@ -72,10 +72,10 @@ export default function Portfolio() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-14 text-center">
           <Link
             href="/portfolio"
-            className="inline-flex items-center gap-2 rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold text-zinc-700 hover:border-amber-300 hover:bg-amber-50 transition-colors"
+            className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-7 py-3 text-sm font-semibold text-zinc-700 shadow-sm hover:border-amber-200 hover:bg-amber-50 hover:text-amber-700 transition-all duration-300"
           >
             View Full Portfolio
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">

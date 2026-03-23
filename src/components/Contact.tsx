@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Contact() {
   return (
@@ -13,13 +14,13 @@ export default function Contact() {
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
               Ready to start your renovation?
             </h2>
-            <p className="mt-4 text-lg leading-8 text-zinc-600">
+            <p className="mt-4 text-lg leading-8 text-zinc-500">
               Tell us about your project and we&apos;ll get back to you within
               24 hours with a free, no-obligation estimate.
             </p>
 
             {/* Image */}
-            <div className="mt-8 relative h-48 overflow-hidden rounded-2xl">
+            <div className="mt-8 relative h-48 overflow-hidden rounded-2xl ring-1 ring-gray-100">
               <Image
                 src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=300&fit=crop"
                 alt="Renovation team at work"
@@ -60,16 +61,12 @@ export default function Contact() {
                 },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-600">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-600 ring-1 ring-amber-100">
                     {item.icon}
                   </div>
                   <div>
-                    <dt className="text-xs font-medium text-zinc-500">
-                      {item.label}
-                    </dt>
-                    <dd className="text-sm font-medium text-zinc-900">
-                      {item.value}
-                    </dd>
+                    <dt className="text-xs font-medium text-zinc-400">{item.label}</dt>
+                    <dd className="text-sm font-medium text-zinc-900">{item.value}</dd>
                   </div>
                 </div>
               ))}
@@ -77,44 +74,24 @@ export default function Contact() {
           </div>
 
           {/* Right — Form */}
-          <form className="flex flex-col gap-5 rounded-2xl border border-gray-200 bg-gray-50 p-8">
+          <form className="flex flex-col gap-5 rounded-2xl bg-gray-50 p-8 ring-1 ring-gray-100 shadow-sm">
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
               <div>
-                <label className="block text-sm font-medium text-zinc-700 mb-1.5">
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
-                  placeholder="John"
-                />
+                <label className="block text-sm font-medium text-zinc-700 mb-1.5">First Name</label>
+                <input type="text" className="w-full rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all" placeholder="John" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-zinc-700 mb-1.5">
-                  Last Name
-                </label>
-                <input
-                  type="text"
-                  className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
-                  placeholder="Doe"
-                />
+                <label className="block text-sm font-medium text-zinc-700 mb-1.5">Last Name</label>
+                <input type="text" className="w-full rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all" placeholder="Doe" />
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-zinc-700 mb-1.5">
-                Email
-              </label>
-              <input
-                type="email"
-                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
-                placeholder="john@example.com"
-              />
+              <label className="block text-sm font-medium text-zinc-700 mb-1.5">Email</label>
+              <input type="email" className="w-full rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all" placeholder="john@example.com" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-zinc-700 mb-1.5">
-                Project Type
-              </label>
-              <select className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500">
+              <label className="block text-sm font-medium text-zinc-700 mb-1.5">Project Type</label>
+              <select className="w-full rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all">
                 <option>Kitchen Remodel</option>
                 <option>Bathroom Renovation</option>
                 <option>Whole-Home Renovation</option>
@@ -125,19 +102,10 @@ export default function Contact() {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-zinc-700 mb-1.5">
-                Message
-              </label>
-              <textarea
-                rows={4}
-                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 resize-none"
-                placeholder="Tell us about your project..."
-              />
+              <label className="block text-sm font-medium text-zinc-700 mb-1.5">Message</label>
+              <textarea rows={4} className="w-full rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all resize-none" placeholder="Tell us about your project..." />
             </div>
-            <button
-              type="submit"
-              className="mt-2 w-full rounded-full bg-amber-600 py-3 text-sm font-semibold text-white shadow-lg shadow-amber-600/25 hover:bg-amber-700 transition-colors"
-            >
+            <button type="submit" className="mt-2 w-full rounded-full bg-amber-600 py-3 text-sm font-semibold text-white shadow-lg shadow-amber-600/20 hover:bg-amber-700 hover:shadow-amber-600/30 transition-all duration-300">
               Send Message
             </button>
           </form>

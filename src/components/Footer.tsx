@@ -24,35 +24,32 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
+    <footer className="bg-gray-50 border-t border-gray-100">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Main footer */}
         <div className="grid grid-cols-1 gap-12 py-16 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-600 text-white font-bold text-sm">
+            <Link href="/" className="flex items-center gap-2.5">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-600 text-white font-bold text-sm shadow-sm shadow-amber-600/20">
                 HR
               </div>
               <span className="text-lg font-bold tracking-tight text-zinc-900">
                 HomeReno<span className="text-amber-600">.</span>
               </span>
             </Link>
-            <p className="mt-4 text-sm leading-6 text-zinc-500">
+            <p className="mt-4 text-sm leading-6 text-zinc-400">
               Premium home renovation services in Austin, TX and surrounding
               areas. Licensed, bonded, and insured.
             </p>
-            <div className="mt-6 flex gap-4">
+            <div className="mt-6 flex gap-3">
               {["Facebook", "Instagram", "Twitter"].map((social) => (
                 <a
                   key={social}
                   href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 text-zinc-500 transition-colors hover:border-amber-500 hover:text-amber-600"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-zinc-400 ring-1 ring-gray-200 transition-all hover:ring-amber-200 hover:text-amber-600 hover:shadow-sm"
                   aria-label={social}
                 >
-                  <span className="text-xs font-bold">
-                    {social.charAt(0)}
-                  </span>
+                  <span className="text-xs font-bold">{social.charAt(0)}</span>
                 </a>
               ))}
             </div>
@@ -65,10 +62,7 @@ export default function Footer() {
               <ul className="mt-4 space-y-3">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-zinc-500 transition-colors hover:text-amber-600"
-                    >
+                    <Link href={link.href} className="text-sm text-zinc-400 transition-colors hover:text-amber-600">
                       {link.label}
                     </Link>
                   </li>
@@ -78,18 +72,13 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Bottom bar */}
         <div className="flex flex-col items-center justify-between gap-4 border-t border-gray-200 py-8 sm:flex-row">
-          <p className="text-xs text-zinc-500">
+          <p className="text-xs text-zinc-400">
             &copy; {new Date().getFullYear()} HomeReno. All rights reserved.
           </p>
           <div className="flex gap-6">
             {["Privacy Policy", "Terms of Service", "Sitemap"].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-xs text-zinc-500 transition-colors hover:text-zinc-700"
-              >
+              <a key={item} href="#" className="text-xs text-zinc-400 transition-colors hover:text-zinc-600">
                 {item}
               </a>
             ))}
